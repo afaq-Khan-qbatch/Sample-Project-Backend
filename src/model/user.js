@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { default: Stripe } = require('stripe');
 const validator = require('validator');
 
 const schema = mongoose.Schema({
