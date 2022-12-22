@@ -40,11 +40,11 @@ io.on('connection', (socket) => {
     socket.on('send_msg', (data) => {
         console.log({ data });
         //broad cast is use for ending message to all users
-        // socket.broadcast.emit('recieve_Message', data );
+        socket.broadcast.emit('recieve_Message', data );
 
         //send data to specfic user
 
-        socket.to(data.room).emit('recieve_Message', data);
+        // socket.to(data.room).emit('recieve_Message', data);
     })
 
     socket.on('join_room', (data) => {

@@ -23,11 +23,12 @@ agenda.define(
 );
 
 (async function () {
-    // const weeklyReport = agenda.create("send email report", {
+    const report = agenda.create("send email report", {
+        to: "example@example.com",
+    })
+    await agenda.start();
+    // await agenda.every("*/1 * * * *", "send email report", {
     //     to: "example@example.com",
     // });
-    await agenda.start();
-    await agenda.every("*/1 * * * *", "send email report", {
-        to: "example@example.com",
-    });
+    report.repeatEvery("1 minute").save();
 })();
